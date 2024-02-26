@@ -18,19 +18,14 @@ body {
 .container {
     width: 300px;
     padding: 30px 40px;
-    background: transparent;
+    background-color: #333;
     border: 1px solid;
-    border-radius: 5px;
+    border-radius: 8px;
+    color: white;
+    animation: fade-up 1s;
 }
 
-.container2 {
-    text-align: center;
-    width: 800px;
-    padding: 30px 40px;
-    background: transparent;
-    border: 1px solid;
-    border-radius: 5px;
-}
+
 
 .container h1 {
     font-size: 35px;
@@ -41,8 +36,27 @@ body {
     width: 100%;
     height: 50px;
     margin: 30px 0;
+    transition: transform 0.3s ease;
 
 }
+
+.container .input-box:hover {
+    transform: scale(1.1);
+}
+
+.container2 {
+    text-align: center;
+    width: 800px;
+    padding: 30px 40px;
+    background: #333;
+    color: white;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    border: 1px white;
+    border-radius: 10px;
+    animation: fade-up 1s;
+}
+
 
 .input-box input {
     width: 100%;
@@ -56,6 +70,14 @@ body {
     padding: 15px 20px 15px 15px;
 }
 
+.date {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.date:hover {
+    transform: scale(1.1);
+}
 
 button {
     display: flex;
@@ -68,24 +90,30 @@ button {
     outline: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 button:hover {
-    background-color: darkblue;
+    background-color: rgb(33, 33, 185);
+    transform: scale(0.90);
+    color: white;
+}
+
+button:active {
+    transform: scale(1.2);
 }
 
 .login-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333;
-    background: #333;
+    background: white;
+    color: #333;
     width: 100%;
     height: 45px;
     border: none;
     outline: none;
-    border-radius: 5px;
-    color: white;
+    border-radius: 8px;
 }
 
 /* Form end */
@@ -106,3 +134,13 @@ button:hover {
 }
 
 /* Footer end */
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
